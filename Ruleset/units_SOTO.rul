@@ -1,0 +1,29 @@
+units:
+  - type: STR_BLACK_LOTUS_FOLLOWER
+    race: STR_HUMAN
+    rank: STR_LIVE_SOLDIER
+    stats:
+      tu: 60
+      stamina: 60
+      health: 35
+      bravery: 80
+      reactions: 40
+      firing: 30
+      throwing: 45
+      strength: 30
+      psiStrength: 35
+      psiSkill: 0
+      melee: 55
+      mana: 50
+    armor: STR_BLACK_LOTUS_FOLLOWER_ARMOR
+    standHeight: 22
+    kneelHeight: 14
+    value: 4
+    # deathSound: *MaleDeathSounds
+    # panicSound: *MalePanicSounds
+    # berserkSound: *MaleBerserkSounds
+    energyRecovery: 30
+    intelligence: 2
+    aggression: 3
+    liveAlien: ""
+    capturable: false

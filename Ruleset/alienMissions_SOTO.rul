@@ -1,0 +1,11 @@
+alienMissions:
+  - type: STR_TEST_BATTLE
+    siteType: STR_TEST_BATTLE
+    raceWeights:
+      0:
+          STR_HUMAN: 100
+    waves:
+      - ufo: STR_TEST_UFO
+        count: 1
+        trajectory: P1
+        timer: 9000 # don't spawn

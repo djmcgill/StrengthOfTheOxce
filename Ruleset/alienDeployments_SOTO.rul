@@ -1,0 +1,17 @@
+alienDeployments:
+  - type: STR_TEST_BATTLE
+    width: 40
+    length: 40
+    height: 10
+    data:
+      - alienRank: 5
+        customUnitType: STR_BLACK_LOTUS_FOLLOWER
+        lowQty: 1
+        highQty: 1
+        dQty: 0
+        percentageOutsideUfo: 100
+        itemSets:
+          -
+          -
+          -
+

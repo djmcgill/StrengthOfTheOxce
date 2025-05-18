@@ -1,0 +1,60 @@
+items:
+  - type: STR_BLACK_LOTUS_FOLLOWER_CORPSE
+    # categories: [STR_CORPSES]
+    name: STR_CORPSE
+    size: 0.4
+    weight: 40
+    bigSprite: 265
+    floorSprite: 233
+    invWidth: 2
+    invHeight: 3
+    costThrow:
+      energy: 20
+    battleType: 11
+    armor: 30
+    recover: true
+    recoverCorpse: false
+    recoveryPoints: 1
+  - type: STR_UNARMED_KARATE
+    weight: 0
+    bigSprite: 822
+    # meleeHitSound: 109 # needs BATTLE.CAT editing
+    meleeAnimation: 0
+    power: 0
+    damageType: 6
+    damageBonus:
+      strength: 0.2
+      melee: 0.3
+      reactions: 0.3
+    damageAlter:
+      RandomType: 1
+      FixRadius: 0
+      IgnoreDirection: false
+      ArmorEffectiveness: 1.5
+      ToHealth: 0.15
+      ToTile: 0.5
+    accuracyMelee: 115
+    meleeMultiplier:
+      melee: 0.5
+      reactions: 0.5
+    confMelee:
+      name: STR_KICK
+      shortName: STR_PUNCH_SHORT
+    costMelee:
+      time: 6
+      energy: 3
+    flatRate: true
+    battleType: 3
+    clipSize: -1
+    experienceTrainingMode: 13
+    invWidth: 2
+    invHeight: 2
+    fixedWeapon: true
+    recover: false
+    specialUseEmptyHand: true
+  - type: STR_DAO
+    bigSprite: 4
+    hidePower: true
+    maxRange: 10
+    arcingShot: true
+    

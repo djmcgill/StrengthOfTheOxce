@@ -1,0 +1,11 @@
+lookWeights:
+  - 35
+  - 35
+  - 20
+  - 10
+maleFirst:
+  - John
+femaleFirst:
+  - Jane
+maleLast:
+  - Smith

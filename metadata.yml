@@ -1,0 +1,8 @@
+name: "Strength of the Oxce"
+version: "0.0.1"
+requiredExtendedVersion: "8.2"
+author: "gonadic io"
+description: "from a humble beginning, can this young person come to comprehend the dao of modding"
+id: "strength-of-the-oxce"
+isMaster: true
+master: xcom1

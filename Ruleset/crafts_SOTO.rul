@@ -1,0 +1,10 @@
+crafts:
+  # - type: STR_MANSION_DEFENSE
+  #   soldiers: 18
+  #   allowedSoldierGroups: [10]
+  #   battlescapeTerrainData:
+  #     name: ATRIUM_DEFENSE
+  #     mapBlocks:
+  #       - name: D_ATRIUM_DEF
+  #         width: 20
+  #         length: 20

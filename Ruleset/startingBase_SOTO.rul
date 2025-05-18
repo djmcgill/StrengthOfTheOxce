@@ -1,0 +1,6 @@
+startingBase:
+  randomSoldiers:
+    STR_SOLDIER_TEST: 1
+startingBaseBeginner:
+  randomSoldiers:
+    STR_SOLDIER_TEST: 1
