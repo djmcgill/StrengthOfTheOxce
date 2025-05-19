@@ -57,4 +57,10 @@ items:
     hidePower: true
     maxRange: 10
     arcingShot: true
-    
+    battleType: 1
+    tuAimed: 10
+    accuracyAimed: 200
+    clipSize: -1
+    confAimed:
+      name: STR_CRANE_DANCE
+    spawnUnit: STR_TEMP_TP_UNIT

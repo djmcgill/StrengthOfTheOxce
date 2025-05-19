@@ -1,6 +1,9 @@
 soldiers:
   - type: STR_SOLDIER_TEST
     group: 10
+    skillIconSprite: 1
+    skills:
+      - STR_TELEPORT # script activated
     minStats: &AnchorHumanMinStats
       tu: 45
       stamina: 40

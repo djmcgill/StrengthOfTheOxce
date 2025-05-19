@@ -1,0 +1,110 @@
+# TODO: this should be a local script for the stuff instead instead.
+# if createUnit were a script on the unit then we wouldn't even need the tag? maybe?
+
+units:
+  - type: STR_TEMP_TP_UNIT
+    armor: STR_BLACK_LOTUS_FOLLOWER_ARMOR
+    stats:
+        health: 10
+    tags:
+      IS_TELEPORT_DUMMY: 1
+    liveAlien: ""
+    capturable: false
+
+skills:
+  - type: STR_TELEPORT
+    tags:
+      SKILL_ID: 1
+    costUse:
+      time: 10
+    targetMode: 9 # aimed
+    compatibleWeapons: [STR_DAO]
+    checkHandsOnly: true
+extended:
+  tags:
+    BattleGame:
+      # set via battleskill from the user
+      TELEPORTED_UNIT_ID: int
+    BattleUnit:
+      IS_TELEPORT_DUMMY: int
+    RuleSkill:
+      SKILL_ID: int
+  scripts:
+    skillUseUnit:
+      - new: MARK_UNIT_AS_TELEPORTER
+        offset: 1
+        code: |
+          var int skill_id;
+          var int unit_id;
+          skill.getTag skill_id Tag.SKILL_ID;
+          battle_game.flashMessage "SkillUse triggered {0} {1}" skill_id have_tu;
+
+          if eq have_tu 0;
+            debug_log "No Resources. Aborted.";
+            set continue_action 0;
+            return;
+          end;
+
+          if neq skill_id 1;
+            return;
+          end;
+
+          actor.getId unit_id;
+          battle_game.setTag Tag.TELEPORTED_UNIT_ID unit_id;
+
+          # do we have to explicitly set this?
+          set continue_action 1;
+
+          debug_log "skill use script done";
+
+          return;
+
+    createUnit:
+      - new: TELEPORT_DUMMY_ACTIVATE
+        offset: 2
+        code: |
+          var int is_teleport_dummy;
+          var int teleported_unit_id;
+          var ptre BattleUnit teleported_unit;
+          var int battle_unit_id;
+          var int target_unit_x;
+          var int target_unit_y;
+          var int target_unit_z;
+          var Position teleported_unit_position;
+          var Position target_unit_position;
+
+          debug_log "create unit triggered";
+
+          unit.getTag is_teleport_dummy Tag.IS_TELEPORT_DUMMY;
+          debug_log "is_teleport_dummy: " is_teleport_dummy;
+
+          if eq is_teleport_dummy 0;
+            battle_game.getTag teleported_unit_id Tag.TELEPORTED_UNIT_ID;
+            debug_log "Create unit teleported unit ID: " teleported_unit_id;
+            if neq teleported_unit_id 0;
+              # only teleport once
+              battle_game.setTag Tag.TELEPORTED_UNIT_ID 0;
+              unit.getPosition target_unit_position;
+
+              # TODO: loop by faction? I mean there's not that many units really
+              loop var u battle_game.getUnits.list;
+                u.getId battle_unit_id;
+                if eq battle_unit_id teleported_unit_id;
+                  u.getPosition teleported_unit_position;
+                end;
+              end;
+
+              debug_log "Teleporting from " teleported_unit_position;
+              debug_log "Teleporting to " target_unit_position;
+
+              # fixme: if we get issues, might have to swap targets
+              set teleported_unit_position target_unit_position;
+
+              debug_log "Teleported?";
+            else;
+              debug_log "teleported unit ID 0";
+            end;
+          else;
+            debug_log "is_teleport_dummy ne 0";
+          end;
+          return;

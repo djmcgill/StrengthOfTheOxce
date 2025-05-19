@@ -13,7 +13,7 @@ extraSprites:
   - type: BIGOBS.PCK
     files:
       3: Resources/tmp/bigob_BLACK_LOTUS_FOLLOWER.png
-      # 4: Resources/tmp/bigob_DAO.png
+      4: Resources/tmp/bigob_DAO.png
   - type: FLOOROB.PCK
     files:
       3: Resources/tmp/floorob_BLACK_LOTUS_FOLLOWER.png
